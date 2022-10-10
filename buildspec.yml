@@ -11,7 +11,8 @@ phases:
     commands:
     - echo Build started on `date`
     - echo Building the Docker image...
-    - docker build -t $REPOSITORY_URI .
+    - docker build -t helloworld .
+    - docker tag helloworld:latest 763991179961.dkr.ecr.ap-southeast-1.amazonaws.com/helloworld:latest
     - docker tag $REPOSITORY_URI:latest $REPOSITORY_URI:$IMAGE_TAG
   post_build:
     commands:
