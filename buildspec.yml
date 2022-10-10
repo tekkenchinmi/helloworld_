@@ -9,7 +9,7 @@ phases:
     - REPOSITORY_URI=${REPO_ECR}
     - IMAGE_TAG=${IMAGE_TAG}
     - aws eks update-kubeconfig --name ${EKS_NAME}
-    - kubectl version
+    - kubectl get svc -A
   build:
     commands:
     - echo Build started on `date`
@@ -21,3 +21,4 @@ phases:
     - echo Build completed on `date`
     - echo Pushing the Docker images...
     - docker push 763991179961.dkr.ecr.ap-southeast-1.amazonaws.com/helloworld:latest
+    - kubectl apply -f helloworld.yaml
