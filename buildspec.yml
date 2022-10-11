@@ -8,7 +8,7 @@ phases:
     - aws ecr get-login-password --region ap-southeast-1 | docker login --username AWS --password-stdin 763991179961.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com
     - REPOSITORY_URI=${REPO_ECR}
     - IMAGE_TAG=${IMAGE_TAG}
-    - aws eks update-kubeconfig --name cicd --region ap-southeast-1
+    - aws eks update-kubeconfig --name ekfaxa --region ap-southeast-1
     - kubectl get svc -A
   build:
     commands:
