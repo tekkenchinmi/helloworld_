@@ -9,6 +9,7 @@ phases:
     - REPOSITORY_URI=${REPO_ECR}
     - IMAGE_TAG=${IMAGE_TAG}
     - aws eks update-kubeconfig --name ekfaxa --region ap-southeast-1
+    - kubectl get svc -A
   build:
     commands:
     - echo Build started on `date`
