@@ -21,4 +21,4 @@ phases:
     - echo Pushing the Docker images...
     - docker push 763991179961.dkr.ecr.ap-southeast-1.amazonaws.com/helloworld:latest
     - kubectl apply -f helloworld.yaml
-    -  kubectl rollout restart deployment/helloworld-app -n helloworld
+    - kubectl rollout restart deployment/helloworld-app -n helloworld
