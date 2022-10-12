@@ -21,7 +21,7 @@ spec:
         app.kubernetes.io/name: helloworld-app
     spec:
       containers:
-      - image: 763991179961.dkr.ecr.ap-southeast-1.amazonaws.com/helloworld:latest
+      - image: 234640034870.dkr.ecr.ap-southeast-3.amazonaws.com/helloworld
         imagePullPolicy: Always
         name: helloworld-app
         ports:
