@@ -3,23 +3,24 @@ phases:
   pre_build:
     commands:
     - EKS_NAME=ekfaxa
+    - AWS_DEFAULT_REGION=ap-southeast-3
     - echo Logging in to Amazon ECR...
     - aws --version
-    - aws ecr get-login-password --region ap-southeast-1 | docker login --username AWS --password-stdin 763991179961.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com
+    - aws ecr get-login-password --region ap-southeast-3 | docker login --username AWS --password-stdin 234640034870.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com
     - REPOSITORY_URI=${REPO_ECR}
     - IMAGE_TAG=${IMAGE_TAG}
-    - aws eks update-kubeconfig --name ekfaxa --region ap-southeast-1
+    - aws eks update-kubeconfig --name AFIEKSFGTJKT-DEV --region ap-southeast-3
     - kubectl get svc -A
   build:
     commands:
     - echo Build started on `date`
     - echo Building the Docker image...
     - docker build -t helloworld .
-    - docker tag helloworld:latest 763991179961.dkr.ecr.ap-southeast-1.amazonaws.com/helloworld:latest
+    - docker tag helloworld:latest 234640034870.dkr.ecr.ap-southeast-3.amazonaws.com/helloworld:latest
   post_build:
     commands:
     - echo Build completed on `date`
     - echo Pushing the Docker images...
-    - docker push 763991179961.dkr.ecr.ap-southeast-1.amazonaws.com/helloworld:latest
+    - docker push 234640034870.dkr.ecr.ap-southeast-1.amazonaws.com/helloworld:latest
     - kubectl apply -f helloworld.yaml
     - kubectl rollout restart deployment/helloworld-app -n helloworld
