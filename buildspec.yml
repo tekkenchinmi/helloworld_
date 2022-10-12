@@ -21,6 +21,6 @@ phases:
     commands:
     - echo Build completed on `date`
     - echo Pushing the Docker images...
-    - docker push 234640034870.dkr.ecr.ap-southeast-1.amazonaws.com/helloworld:latest
+    - docker push 234640034870.dkr.ecr.ap-southeast-3.amazonaws.com/helloworld:latest
     - kubectl apply -f helloworld.yaml
     - kubectl rollout restart deployment/helloworld-app -n helloworld
