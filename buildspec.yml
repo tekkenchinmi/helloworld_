@@ -6,7 +6,7 @@ phases:
     - AWS_DEFAULT_REGION=ap-southeast-3
     - echo Logging in to Amazon ECR...
     - aws --version
-    - aws ecr get-login-password --region ap-southeast-3 | docker login --username AWS --password-stdin 234640034870.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com
+    - aws ecr get-login-password --region ap-southeast-3 | docker login --username AWS --password-stdin 234640034870.dkr.ecr.ap-southeast-3.amazonaws.com
     - REPOSITORY_URI=${REPO_ECR}
     - IMAGE_TAG=${IMAGE_TAG}
     - aws eks update-kubeconfig --name AFIEKSFGTJKT-DEV --region ap-southeast-3
