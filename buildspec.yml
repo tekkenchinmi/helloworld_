@@ -9,7 +9,7 @@ phases:
     - aws ecr get-login-password --region ap-southeast-3 | docker login --username AWS --password-stdin 234640034870.dkr.ecr.ap-southeast-3.amazonaws.com
     - REPOSITORY_URI=${REPO_ECR}
     - IMAGE_TAG=${IMAGE_TAG}
-    - aws eks update-kubeconfig --name AFIEKSFGTJKT-DEV --region ap-southeast-3
+    - aws eks update-kubeconfig --name AFIEKSJKT-DEV --region ap-southeast-3
     - kubectl get svc -A
   build:
     commands:
